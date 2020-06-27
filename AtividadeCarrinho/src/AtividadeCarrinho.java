@@ -15,7 +15,7 @@ public class AtividadeCarrinho extends HttpServlet {
     ArrayList<Product> products;
 
     public AtividadeCarrinho() {
-        products = new ArrayList();
+        products = new ArrayList<>();
         products.add(new Product("Celular Moto G5s", "Celular android", 1, 700.0));
         products.add(new Product("Livro The Hobbit", "Livro de fantasia", 2, 60.70));
         products.add(new Product("Livro JavaScript on Things", "Livro técnico", 3, 100.0));
@@ -37,7 +37,7 @@ public class AtividadeCarrinho extends HttpServlet {
         }
 
         for (Product p : products) {
-            if (p.getId() == productId) {
+            if (p.getId().equals(productId)) {
                 sessionProducts.add(p);
                 session.setAttribute("products", sessionProducts);
                 break;
