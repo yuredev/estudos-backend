@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="ContextoListener:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/ContextoListener_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="ContextoListener/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="ContextoListener" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
