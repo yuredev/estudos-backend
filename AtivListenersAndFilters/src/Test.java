@@ -11,16 +11,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 @WebServlet(name = "ServletHello", urlPatterns = {"/Hello"})
-public class ServletHello extends HttpServlet {
+public class Test extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ServletContext context = getServletContext();
 
         response.getWriter().println("Hello");
-
         Cookie[] cookies = request.getCookies();
         if (cookies != null) {
             for (Cookie c: cookies) {
