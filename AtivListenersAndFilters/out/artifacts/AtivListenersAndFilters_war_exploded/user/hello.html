@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Hello</h1>
+    <script>
+        window.onload = () => {
+            const [ body ] = document.getElementsByTagName("body");
+            body.innerHTML += `<br/ >Cookies: <br/> ${document.cookie}`;
+        }
+    </script>
+</body>
+</html>

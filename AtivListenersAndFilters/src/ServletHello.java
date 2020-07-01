@@ -3,6 +3,7 @@ import models.User;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,10 +19,17 @@ public class ServletHello extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ServletContext context = getServletContext();
 
-        ArrayList<User> usersList = (ArrayList<User>) context.getAttribute("users");
+        response.getWriter().println("Hello");
 
-        for (User u: usersList) {
-            response.getWriter().println(u.getName());
+        Cookie[] cookies = request.getCookies();
+        if (cookies != null) {
+            for (Cookie c: cookies) {
+                if (c.getName().equals("authentication")) {
+                    response.getWriter().println("CONTEXT TOKENS: " + getServletContext().getAttribute("tokens"));
+                    response.getWriter().println("COOKIE AUTHENTICATION: " + c.getValue());
+                    break;
+                }
+            }
         }
     }
 }
