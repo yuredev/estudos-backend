@@ -40,8 +40,42 @@
     <%-- diretiva. importando partes html. parecido com componentes--%>
     <%@include file="chola-mais.jsp"%>
 
-    <%-- Os 2 Comentários são diferentes:   --%>
+    <%-- Os 2 Comentários são diferentes:  --%>
     <%-- Comentário que será transpilado pra um comentário Java no Servlet gerado --%>
     <!-- Comentário que ficará no HTML -->
+
+    <br />
+
+    <%-- Pegando request --%>
+    <%-- request é o HttpServletRequest do Servlet  --%>
+    <% out.print(request.getParameter("name"));  %>
+    <%=request.getParameter("name")%>
+
+    <%-- sessões são criadas por padrão  --%>
+    <%=session.getId()%>
+
+    <br />
+
+    <%
+        session.setAttribute("name", "yure");
+        String aluno = (String) session.getAttribute("name");
+    %>
+
+    <br />
+
+    <%=aluno%>
+
+    <%--    objeto response  --%>
+    <%--    <%response.sendRedirect("http://github.com");%>--%>
+    <% response.addCookie(new Cookie("a", "4545"));%>
+    <% response.addHeader("sdgsd", "3434");%>
+
+    <%-- objeto do contexto  --%>
+    <%
+        application.setAttribute("attribute", 2483);
+        Object attribute = application.getAttribute("attribute");
+        out.print(attribute);
+    %>
+
   </body>
 </html>
