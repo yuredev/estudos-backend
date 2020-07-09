@@ -40,7 +40,7 @@
     <%-- diretiva. importando partes html. parecido com componentes--%>
     <%@include file="chola-mais.jsp"%>
 
-    <%-- Os 2 Comentários são diferentes:   --%>
+    <%-- Os 2 Comentários são diferentes:  --%>
     <%-- Comentário que será transpilado pra um comentário Java no Servlet gerado --%>
     <!-- Comentário que ficará no HTML -->
 
