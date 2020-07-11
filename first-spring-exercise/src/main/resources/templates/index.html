@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td, th {
+            border-width: 1px;
+            border-style: solid;
+            border-color: black;
+            min-width: 50px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <h1>Transações financeiras realizadas</h1>
+        <a href="/create"> Cadastrar nova transação </a>
+    </p>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Título
+                </th>
+                <th>
+                    Valor
+                </th>
+                <th>
+                    Tipo
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="transaction : ${transactionList}">
+                <td th:text="${transaction.id}">ID</td>
+                <td th:text="${transaction.title}">Título</td>
+                <td th:text="${transaction.value}">Valor</td>
+                <td th:text="${transaction.type}">Tipo</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
