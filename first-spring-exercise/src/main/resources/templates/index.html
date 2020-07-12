@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>CRUD - Transações financeiras</title>
     <style>
         table {
             border-collapse: collapse;
@@ -13,6 +13,9 @@
             border-color: black;
             min-width: 50px;
             padding: 10px;
+        }
+        a:nth-child(2) {
+            color: #AA0000;
         }
     </style>
 </head>
@@ -36,6 +39,9 @@
                 <th>
                     Tipo
                 </th>
+                <th>
+                    Ações
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -44,6 +50,11 @@
                 <td th:text="${transaction.title}">Título</td>
                 <td th:text="${transaction.value}">Valor</td>
                 <td th:text="${transaction.type}">Tipo</td>
+                <td>
+                    <a th:href="@{'/edit/' + ${transaction.id}}">Editar</a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a th:href="@{'/delete/' + ${transaction.id}}">Deletar</a>
+                </td>
             </tr>
         </tbody>
     </table>

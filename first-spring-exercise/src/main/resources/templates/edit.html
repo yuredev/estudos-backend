@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+    <form th:object="${transaction}" action="#" th:action="@{/save}" method="post">
+        <input type="number" th:field="*{id}" readonly />  <br />
+        <input type="text" placeholder="Título" th:field="*{title}" /> <br /> <!-- tipo text por padrão -->
+        <input type="number" placeholder="Valor" th:field="*{value}" /> <br />
+        <div>
+            <label>Tipo</label>
+            <select th:field="*{type}">
+                <option th:value="Entrada" th:text="Entrada"></option>
+                <option th:value="Saída" th:text="Saída"></option>
+            </select>
+        </div>
+        <button type="submit">Confirmar</button>
+    </form>
+</body>
+</html>
